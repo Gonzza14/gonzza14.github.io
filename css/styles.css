@@ -1,0 +1,131 @@
+:root {
+  --color-primario: #4e6e81;
+  --color-primario-oscuro: #2e3840;
+  --color-texto: #f9dbbb;
+  --color-secundario: #ff0303;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: local("Montserrat-Regular"),
+    url("../assets/fonts/Montserrat-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat-Medium";
+  src: local("Montserrat-Medium"),
+    url("../assets/fonts/Montserrat-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat-Light";
+  src: local("Montserrat-Light"),
+    url("../assets/fonts/Montserrat-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat-Black";
+  src: local("Montserrat-Black"),
+    url("../assets/fonts/Montserrat-Black.ttf") format("truetype");
+}
+
+body {
+  scroll-behavior: smooth;
+  font-family: Montserrat-Light;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+  "main"
+  "footer"
+  "menu-nav";
+}
+
+.main{
+  grid-area: main;
+}
+
+.footer{
+  grid-area: footer
+}
+
+.fixed-nav{
+  grid-area: menu-nav;
+}
+
+.main-nav{
+    background-color: var(--color-primario);
+    display: flex;
+    flex-direction: column;
+    flex-direction: column-reverse;
+}
+
+.main-nav__logo{
+  display: flex;
+  justify-content: center;
+}
+
+.main-nav__logo__item__link{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-family: Montserrat-Black;
+  font-size: 1.5rem;
+  color: var(--color-texto);
+}
+
+.logo-letra-g{
+  color: var(--color-secundario);
+}
+
+.logo-letra-o{
+  color: var(--color-primario-oscuro);
+}
+
+.main-nav__menu{
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(max-content,1fr));
+
+  justify-items: center;
+
+  align-items: center;
+  font-family: Montserrat-Black;
+  font-size: 0.9rem;
+}
+
+.main-nav__menu__item{
+  width: 100%;
+  height: 100%;
+  padding: 1.3rem;
+  text-align: center;
+}
+
+.main-nav__menu__item:hover{
+  background-color: var(--color-secundario);
+  cursor: pointer;
+}
+
+.main-nav__menu__item__link,
+.main-nav__logo__item__link{
+    text-decoration: none;
+}
+
+.main-nav__menu__item__link__text{
+  color: var(--color-texto);
+  align-self: center;
+  justify-self: center;
+}
+
+.main-nav__menu__item:hover .main-nav__menu__item__link__text{
+  color: var(--color-primario-oscuro);
+}
+
