@@ -35,7 +35,12 @@
 
 body {
   scroll-behavior: smooth;
+  background: linear-gradient(90deg, #2E3740 7%, #345664 98%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: auto;
   font-family: Montserrat-Light;
+  color: var(--color-texto);
   margin: 0;
   padding: 0;
   display: grid;
@@ -45,6 +50,7 @@ body {
   "footer"
   "menu-nav";
 }
+
 
 .main{
   grid-area: main;
@@ -56,6 +62,9 @@ body {
 
 .fixed-nav{
   grid-area: menu-nav;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .main-nav{
@@ -63,6 +72,31 @@ body {
     display: flex;
     flex-direction: column;
     flex-direction: column-reverse;
+}
+
+.main-section{
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+  min-height:calc(100vh - 6em)
+}
+
+.main-section__div{
+  width: 70%;
+}
+
+.main-section__saludo{
+  margin-top: 0;
+}
+
+.main-section__lightsaber{
+  max-width: 100%
+}
+
+.main-section__title{
+  font-family: Montserrat-Black;
+  margin: 0;
 }
 
 .main-nav__logo{
@@ -93,8 +127,7 @@ body {
   margin: 0;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, minmax(max-content,1fr));
-
+  grid-template-columns: repeat(3, minmax(min-content,1fr));
   justify-items: center;
 
   align-items: center;
@@ -107,6 +140,9 @@ body {
   height: 100%;
   padding: 1.3rem;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-nav__menu__item:hover{
@@ -129,3 +165,41 @@ body {
   color: var(--color-primario-oscuro);
 }
 
+.work-section{
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+.work-section__title{
+  font-family:  Montserrat-Black;
+  width: 90%;
+  justify-self: center;
+}
+
+.work-section__card{
+  background-color: var(--color-primario-oscuro);
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.work-section__card__title,
+.work-section__card__cargo,
+.work-section__card__link{
+  font-family:  Montserrat-Black;
+}
+
+.work-section__card__div{
+  width: 90%;
+
+}
+
+.work-section__card__img{
+  max-width: 100%;
+}
+
+.work-section__card__link{
+  color: var(--color-secundario);
+}
