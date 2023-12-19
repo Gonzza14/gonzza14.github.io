@@ -54,6 +54,9 @@ body {
 
 .main{
   grid-area: main;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5em;
 }
 
 .footer{
@@ -165,30 +168,48 @@ body {
   color: var(--color-primario-oscuro);
 }
 
-.work-section{
+.work-section,
+.about-me-section{
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
+  gap: 1em;
 }
 
-.work-section__title{
+.work-section__title,
+.about-me-section__title,
+.about-me-section__subtitle{
   font-family:  Montserrat-Black;
   width: 90%;
   justify-self: center;
+  margin-bottom: 0;
 }
 
-.work-section__card{
-  background-color: var(--color-primario-oscuro);
+.work-section__card,
+.about-me-section__description{
   width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center
 }
 
+.work-section__card{
+  background-color: var(--color-primario-oscuro);
+}
+
 .work-section__card__title,
 .work-section__card__cargo,
-.work-section__card__link{
+.work-section__card__link
+{
   font-family:  Montserrat-Black;
+}
+
+.work-section__card__title{
+  margin-bottom: 0;
+}
+
+.work-section__card__date{
+  margin-top: 0;
 }
 
 .work-section__card__div{
@@ -196,10 +217,54 @@ body {
 
 }
 
-.work-section__card__img{
+.work-section__card__img,
+.about-me-section__description__img{
   max-width: 100%;
 }
 
 .work-section__card__link{
   color: var(--color-secundario);
+}
+
+.about-me-section__description__text{
+  margin-top: 0;
+}
+
+.about-me-section__description__button{
+  align-self: start;
+  margin-bottom: 1em;
+  padding: 1em;
+  color: var(--color-texto);
+  background-color: var(--color-primario-oscuro);
+  font-family: Montserrat-Black;
+  border: 0;
+}
+
+.about-me-section__description__button:hover{
+  color: var(--color-primario-oscuro);
+  background-color: var(--color-secundario);
+}
+
+.about-me-section__description__img{
+  max-height: 60%;
+}
+
+.about-me-habilidades__card{
+  display: flex;
+  justify-content: start;
+  width: 100%;
+  align-items: center;
+  
+}
+
+
+.about-me-habilidades {
+  display: flex;
+  width: 90%;
+  align-items: center;
+  background-color: var(--color-primario-oscuro);
+}
+
+.about-me-habilidades__card__icon, .about-me-aptitudes__card__icon{
+  padding: 1em;
 }
