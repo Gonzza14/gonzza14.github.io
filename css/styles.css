@@ -192,6 +192,10 @@ body {
   margin-bottom: 0;
 }
 
+.work-section__card__subtitle{
+  font-family: Montserrat-Medium;
+}
+
 .work-section__card,
 .about-me-section__description{
   width: 90%;
@@ -231,6 +235,10 @@ body {
 
 .work-section__card__link{
   color: var(--color-secundario);
+  background-color: transparent;
+  border: 0;
+  margin: 0 0 1em;
+  padding: 0;
 }
 
 .about-me-section__description__text{
@@ -430,3 +438,52 @@ input[type="text"]{
   background-color: var(--color-primario-oscuro);
   color: var(--color-texto)
 }
+
+.modal{
+  display: none;
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  background-color: var(--color-primario-oscuro);
+  justify-content: center;
+}
+
+.modal-content{
+  width: 100%;
+  color: var(--color-texto);
+  display: flex;
+  flex-direction: column;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.modal-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-title{
+  font-family: Montserrat-Black;
+  margin-bottom: 0;
+}
+
+.modal-date{
+  margin-top: 0;
+}
+
+.modal-subtitle{
+  margin-top: 0;
+  font-family: Montserrat-Medium;
+}
+
+.close{
+  color: var(--color-texto);
+  font-family: Montserrat-Medium;
+  font-size: 4em;
+}
+
