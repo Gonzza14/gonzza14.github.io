@@ -174,6 +174,38 @@ body {
   color: var(--color-primario-oscuro);
 }
 
+.contact-section__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(4em, 40px));
+  gap: 1em;
+  list-style: none;
+  padding-left: 0;
+
+}
+
+.contact-section__item {
+  background-color: var(--color-primario);
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-section__link {
+  color: var(--color-texto);
+  font-size: 1.4rem;
+}
+
+.contact-section__item:hover {
+  cursor: pointer;
+  background-color: var(--color-secundario);
+}
+
+.contact-section__item:hover
+.contact-section__link{
+  color: var(--color-primario-oscuro);
+}
+
 .work-section,
 .about-me-section,
 .contact-section {
@@ -255,12 +287,22 @@ body {
   max-width: 100%;
 }
 
+.work-section__card__img{
+  height: auto;
+}
+
 .work-section__card__link {
-  color: var(--color-secundario);
-  background-color: transparent;
+  color: var(--color-texto);
+  background-color: var(--color-primario);
   border: 0;
   margin: 0 0 1em;
-  padding: 0;
+  padding: 1em;
+}
+
+.work-section__card__link:hover{
+  color: var(--color-primario-oscuro);
+  background-color: var(--color-secundario);
+  cursor: pointer;
 }
 
 .about-me-section__description__text {
@@ -272,7 +314,7 @@ body {
   margin-bottom: 1em;
   padding: 1em;
   color: var(--color-texto);
-  background-color: var(--color-primario-oscuro);
+  background-color: var(--color-primario);
   font-family: Montserrat-Black;
   border: 0;
 }
@@ -281,6 +323,7 @@ body {
   color: var(--color-primario-oscuro);
   background-color: var(--color-secundario);
 }
+
 
 .about-me-section__description__img {
   max-height: 100%;
@@ -334,7 +377,7 @@ body {
 
 .container h2 {
   width: 100%;
-  color: var(--color-secundario);
+  color: var(--color-texto);
   font-size: 36px;
   text-align: center;
   margin-bottom: 10px;
@@ -358,7 +401,7 @@ body {
   position: relative;
   width: 100%;
   height: 40px;
-  color: var(--color-secundario);
+  color: var(--color-texto);
 }
 
 .container .row100 .inputBox input,
@@ -400,7 +443,7 @@ body {
   display: block;
   width: 100%;
   height: 2px;
-  background: var(--color-secundario);
+  background: var(--color-texto);
   transition: 0.5s;
   border-radius: 2px;
   pointer-events: none;
@@ -439,7 +482,7 @@ input[type="submit"] {
   padding: 7px 35px;
   cursor: pointer;
   outline: none;
-  background: var(--color-primario-oscuro);
+  background: var(--color-primario);
   color: var(--color-texto);
   font-size: 18px;
   border-radius: 2px;
@@ -479,20 +522,21 @@ input[type="text"] {
   padding: 1.5em;
   width: 100%;
   height: 100%;
-  overflow-y: scroll;
   background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
   justify-content: center;
+  overflow-y: scroll;
 }
 
 .modal-content {
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: max-content;
   color: var(--color-texto);
   display: flex;
   flex-direction: column;
   padding-left: 1em;
   padding-right: 1em;
   background-color: var(--color-primario-oscuro);
+ 
 }
 
 .modal-header {
@@ -514,13 +558,38 @@ input[type="text"] {
   font-family: Montserrat-Medium;
 }
 
+.modal-img{
+  max-width: 100%;
+}
+
 .close {
   color: var(--color-texto);
   font-family: Montserrat-Medium;
   font-size: 3em;
 }
 
+.close:hover{
+  color: var(--color-secundario);
+  cursor: pointer;
+}
+
 @media only screen and (min-width: 740px) {
+
+  .modal-list-one{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .list-item{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+  }
+
+  .modal {
+    padding: 2em;
+  }
+
   body {
     grid-template-areas:
       "menu-nav"
@@ -629,17 +698,27 @@ input[type="text"] {
   .section-aptitudes {
     grid-area: aptitudes;
   }
+
+  .contact-section {
+    font-size: 1.3em;
+  }
+
 }
 
 @media only screen and (min-width: 1000px) {
-  .main {
-    gap: 7em;
-  }
   .work-section {
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
       "titulo titulo titulo"
       "card1 card2 card3";
+  }
+
+  .list-item{
+    gap: 0;
+  }
+  
+  .modal {
+    padding: 6em;
   }
 
   .card-three-div {
@@ -652,6 +731,8 @@ input[type="text"] {
     grid-template-areas:
       "descripcion habilidades aptitudes"
       "descripcion habilidades aptitudes";
+    padding-left: 5em;
+    overflow: hidden; 
   }
 
   .about-me-section__title {
@@ -675,9 +756,39 @@ input[type="text"] {
   .section-aptitudes {
     grid-area: aptitudes;
   }
+
+  .contact-section {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "info form";
+    justify-self: center;
+    padding-bottom: 12em;
+  }
+
+  .contact-section__title {
+    width: 100%;
+  }
+
+  .contact-section__info {
+    grid-area: info;
+  }
+
+  .contact-section__form {
+    grid-area: form;
+  }
+
+  .about-me-section {
+    height: 100vh;
+  }
 }
 
 @media only screen and (min-width: 1370px) {
+
+  .modal{
+    padding-left: 12em;
+    padding-right: 12em;
+    padding-bottom: 12em;
+  }
+
   .main-nav__logo__item__link {
     font-size: 2rem;
   }
@@ -723,5 +834,11 @@ input[type="text"] {
 
   .section-aptitudes {
     grid-area: aptitudes;
+  }
+
+  .list-item{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
   }
 }
