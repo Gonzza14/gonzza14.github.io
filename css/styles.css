@@ -445,21 +445,23 @@ input[type="text"]{
   z-index: 3;
   left: 0;
   top: 0;
-  bottom: 0;
+  padding: 1.5em;;
   width: 100%;
   height: 100%;
   overflow-y: scroll;
-  background-color: var(--color-primario-oscuro);
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
   justify-content: center;
 }
 
 .modal-content{
   width: 100%;
+  height: 100%;
   color: var(--color-texto);
   display: flex;
   flex-direction: column;
   padding-left: 1em;
   padding-right: 1em;
+  background-color: var(--color-primario-oscuro);
 }
 
 .modal-header{
@@ -484,6 +486,6 @@ input[type="text"]{
 .close{
   color: var(--color-texto);
   font-family: Montserrat-Medium;
-  font-size: 4em;
+  font-size: 3em;
 }
 
