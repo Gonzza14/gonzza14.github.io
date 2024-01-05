@@ -60,6 +60,7 @@ body {
 
 .footer {
   grid-area: footer;
+  
 }
 
 .fixed-nav {
@@ -702,7 +703,8 @@ input[type="text"] {
 
   .contact-section {
     font-size: 1.3em;
-    padding-top: 6em;
+    margin-top: 6em;
+    margin-bottom: 6em;
   }
 
 }
@@ -761,8 +763,7 @@ input[type="text"] {
   .contact-section {
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: "info form";
-    justify-self: center;
-    padding-bottom: 6em;
+    align-items: center;
   }
 
   .contact-section__title {
@@ -775,10 +776,6 @@ input[type="text"] {
 
   .contact-section__form {
     grid-area: form;
-  }
-
-  .about-me-section {
-    height: 100vh;
   }
 }
 
